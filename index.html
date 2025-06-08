@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Password Complexity Checker</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1>Password Complexity Checker</h1>
+            <p class="subtitle">Create and analyze secure passwords with real-time feedback</p>
+        </header>
+
+        <main class="main-content">
+            <div class="password-section">
+                <div class="form-group">
+                    <label for="password-input" class="form-label">Enter your password</label>
+                    <div class="password-input-wrapper">
+                        <input 
+                            type="password" 
+                            id="password-input" 
+                            class="form-control password-input" 
+                            placeholder="Type your password here..."
+                            autocomplete="new-password"
+                        >
+                        <button type="button" class="password-toggle btn--secondary" id="password-toggle">
+                            <span class="toggle-icon">👁️</span>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="strength-meter-section">
+                    <div class="strength-header">
+                        <span class="strength-label">Password Strength:</span>
+                        <span class="strength-level" id="strength-level">Enter a password</span>
+                    </div>
+                    <div class="strength-bar-container">
+                        <div class="strength-bar" id="strength-bar"></div>
+                    </div>
+                    <div class="strength-score">
+                        <span>Score: <span id="score-display">0</span>/100</span>
+                    </div>
+                </div>
+
+                <div class="password-actions">
+                    <button type="button" class="btn btn--primary" id="generate-password">
+                        Generate Strong Password
+                    </button>
+                    <button type="button" class="btn btn--secondary" id="copy-password" disabled>
+                        Copy Password
+                    </button>
+                    <button type="button" class="btn btn--outline" id="clear-password">
+                        Clear
+                    </button>
+                </div>
+            </div>
+
+            <div class="analysis-section">
+                <div class="card">
+                    <div class="card__body">
+                        <h3>Security Analysis</h3>
+                        <div class="criteria-list" id="criteria-list">
+                            <!-- Criteria will be populated by JavaScript -->
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card__body">
+                        <h3>Security Metrics</h3>
+                        <div class="metrics-grid">
+                            <div class="metric">
+                                <span class="metric-label">Entropy:</span>
+                                <span class="metric-value" id="entropy-display">0 bits</span>
+                            </div>
+                            <div class="metric">
+                                <span class="metric-label">Estimated crack time:</span>
+                                <span class="metric-value" id="crack-time-display">Instant</span>
+                            </div>
+                            <div class="metric">
+                                <span class="metric-label">Character variety:</span>
+                                <span class="metric-value" id="variety-display">None</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+        </main>
+
+    <script src="app.js"></script>
+</body>
+</html>
